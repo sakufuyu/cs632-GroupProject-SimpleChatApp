@@ -12,11 +12,11 @@ impl ChatSimulator {
     pub fn new() -> Self {
         ChatSimulator {
             users: vec![
-                User { id: 1, name: "Akito".to_string() },
-                User { id: 2, name: "Kazuki".to_string() },
-                User { id: 3, name: "Miku".to_string() },
-                User { id: 4, name: "Chisato".to_string() },
-                User { id: 5, name: "Yumi".to_string() },
+                User::new(1, "Akito".to_string()),
+                User::new(2, "Kazuki".to_string()),
+                User::new(3, "Miku".to_string()),
+                User::new(4, "Chisato".to_string()),
+                User::new(5, "Yumi".to_string()),
             ],
         }
     }

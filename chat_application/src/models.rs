@@ -27,6 +27,17 @@ impl Message {
 pub struct User {
     pub id: u64,
     pub name: String,
+    pub created_at: u64,
+}
+
+impl User {
+    pub fn new(id: u64, name: String) -> Self {
+        User {
+            id,
+            name,
+            created_at: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs(),
+        }
+    }
 }
 
 // Chat event
