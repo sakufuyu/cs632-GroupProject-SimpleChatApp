@@ -39,7 +39,6 @@ impl ChatSimulator {
 
                 // Create a new message
                 let msg = Message::new(
-                    i as u64 + 1,
                     *user_id,
                     user.name.clone(),
                     content.to_string(),
@@ -51,7 +50,7 @@ impl ChatSimulator {
                 drop(message_store); // Release the lock
 
                 // Display the message
-                println!("[{}] {}: {}", msg.id, msg.sender_name, msg.content);
+                println!("[{}] {}({}): {}", msg.timestamp, msg.sender_name, msg.sender_id, msg.content);
 
                 thread::sleep(Duration::from_secs(1));
             }
